@@ -54,6 +54,7 @@ class ising_2d_test(unittest.TestCase):
         E2=ising.energy()
         self.assertTrue(E1==E2)
                 
+    def test_
                 
 if __name__ == "__main__":
     unittest.main()
