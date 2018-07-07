@@ -32,6 +32,18 @@ class ising_2d_test(unittest.TestCase):
         elif initial_state is 0:
             self.assertEqual(final_state,1)
 
+    def test_energy(self) :
+        ising = ising2d()
+        Eg=ising.energy()
+        for i in range(10) :
+            ising.initialize_guess()
+            Ee=ising.energy()
+            self.assertTrue(Eg<=Ee)
+        E1=ising.energy()
+        ising.all_flip()
+        E2=ising.energy()
+        self.assertTrue(E1==E2)
+                
                 
 if __name__ == "__main__":
     unittest.main()
