@@ -5,3 +5,5 @@ script: python test_ising2d.py
 branches:
   only:
     - master
+notifications:
+  email: false
