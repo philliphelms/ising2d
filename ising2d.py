@@ -1,7 +1,7 @@
 import numpy as np
 
 class ising2d:
-    def __init__(self,lattice_size=(10,10),J=1.):
+    def __init__(self,lattice_size=(2,5),J=1.):
         self.lattice_size=lattice_size
         self.lattice=np.zeros((self.lattice_size[0],self.lattice_size[1]),dtype=int)
         self.J = J
@@ -13,6 +13,9 @@ class ising2d:
 
     def flip_spin(self,ix,iy):
         self.lattice[ix,iy]=1-self.lattice[ix,iy]
+
+    def all_flip(self):
+        self.lattice = np.ones(self.lattice.shape,dtype=int)-self.lattice
 
     def find_pairs(self):
         self.interaction_inds = []

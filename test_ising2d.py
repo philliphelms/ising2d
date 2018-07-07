@@ -44,15 +44,15 @@ class ising_2d_test(unittest.TestCase):
         for i in range(10) :
             ising.initialize_guess()
             Ee=ising.energy()
-            print(Eg)
-            print(Ee)
             self.assertTrue(Eg<=Ee)
 
-#    def test_flip_energy(self):
-#        E1=ising.energy()
-#        ising.all_flip()
-#        E2=ising.energy()
-#        self.assertTrue(E1==E2)
+    def test_flip_energy(self):
+        ising = ising2d()
+        ising.find_pairs()
+        E1=ising.energy()
+        ising.all_flip()
+        E2=ising.energy()
+        self.assertTrue(E1==E2)
                 
                 
 if __name__ == "__main__":
