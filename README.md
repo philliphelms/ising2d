@@ -4,21 +4,21 @@ This code was developed as part of the Simon's Institute Summer School, 2018.
 The overall goal of this code is to determine the ground state of the 2D Ising model, 
 but the goal of the exercise is to practice the following:
 + Pair Programming
-..+ Two coders work on one workstation, i.e. physically passing a laptop back and forth. 
-..+ One writes the code while the other observes to check for correctness.
-..+ Frequently collabarte about possible approaches/solutions.
-..+ Roles switch frequently.
+  + Two coders work on one workstation, i.e. physically passing a laptop back and forth. 
+  + One writes the code while the other observes to check for correctness.
+  + Frequently collabarte about possible approaches/solutions.
+  + Roles switch frequently.
 + Test Driven Development
-..+ A software development strategy that relies on a short cycle:
-....1. Create Test (which will initially fail and thus defines short term goals).
-....2. Write code until the test can be passed.
-....3. Refactor code, i.e. clean up whatever was done so the code looks nice again.
-..+ An additional possible step is to add documentation (via Doxygen?) after refactoring. 
+  + A software development strategy that relies on a short cycle:
+    1. Create Test (which will initially fail and thus defines short term goals).
+    2. Write code until the test can be passed.
+    3. Refactor code, i.e. clean up whatever was done so the code looks nice again.
+  + An additional possible step is to add documentation (via Doxygen?) after refactoring. 
 + Version Control (via git/github)
 + Continuous Integration (via travis-ci)
-..+ Detailed discussion given below
+  + Detailed discussion given below
 + Documentation (via Doxygen)
-..+ This was not covered in depth, but in essence, it allows programmers to write documentation within the comments of their code. 
+  + This was not covered in depth, but in essence, it allows programmers to write documentation within the comments of their code. 
 
 ## Continuous Integration
 Travis provides the following definition of continuous integration: "Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments. This is where Travis CI comes in."
