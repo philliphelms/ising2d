@@ -9,5 +9,9 @@ class ising2d :
         for i in range(self.lattice_size):
             for j in range(self.lattice_size):
                 self.lattice[i,j] = np.floor(np.random.rand(1)+0.5)
+
     def flip_spin(self,ix,iy) :
         self.lattice[ix,iy]=1-self.lattice[ix,iy]
+
+    def energy(self):
+

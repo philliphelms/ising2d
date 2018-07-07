@@ -7,3 +7,4 @@ but the goal of the exercise is to practice the following:
 -Test Driven Development
 -Version Control (via git/github)
 -Continuous Integration (via travis-ci)
+-Documentation (via Doxygen)
