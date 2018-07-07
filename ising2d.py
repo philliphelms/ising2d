@@ -36,3 +36,6 @@ class ising2d:
             spin2 = 2*self.lattice[self.interaction_inds[i][1]]-1
             E -= self.J*spin1*spin2
         return E
+
+    def select_random_site(self):
+        return np.random.randint(self.lattice_size[0]), np.random.randint(self.lattice_size[1])

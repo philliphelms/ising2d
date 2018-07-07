@@ -53,6 +53,18 @@ class ising_2d_test(unittest.TestCase):
         ising.all_flip()
         E2=ising.energy()
         self.assertTrue(E1==E2)
+
+    def test_select_random_site(self):
+        # This should be able to test whether we are selecting a random x and y point in the lattice
+        ising = ising2d()
+        ix,iy = ising.select_random_site()
+        self.assertTrue(type(ix) is int)
+        self.assertTrue(type(iy) is int)
+        self.assertTrue(ix<ising.lattice_size[0])
+        self.assertTrue(ix<ising.lattice_size[1])
+        self.assertTrue(ix>=0)
+        self.assertTrue(iy>=0)
+        
                 
 if __name__ == "__main__":
     unittest.main()
