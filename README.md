@@ -15,12 +15,15 @@ In essence, the primary functionality of Travis appears to be to:
 1. Clone your github repo into a virtual environment
 2. Builds and tests your code
 3. Tells you whether the builds passed or failed.
+
 I'm sure that there is much more available here, but this seems to be the most important part. 
+
+Below is a brief set of instructions on how to do this. It seems fairly intuitive and took me only a few minutes to set up.
 
 1. Go to travis-ci.com
 2. Link Github account, all public repos should appear
 3. Select a repo to work with and toggle the slidebar next to it to activate. 
 4. Click on the repo's name to get started
 5. Click "Read the Docs and Get Started" to really figure out what is going on, though I'll try to write a brief tutorial here
-6. Add a .travis.yml file to your repository to tell Travis CI what to do, commit and push this to the github repo.
+6. Add a .travis.yml file to your repository to tell Travis CI what to do (as described in the Travis documentation), commit and push this to the github repo.
 7. Go to travis-ci.com again to check the build status and see if your code passed or failed. 
