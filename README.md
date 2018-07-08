@@ -40,3 +40,33 @@ Below is a brief set of instructions on how to do this. It seems fairly intuitiv
 6. Add a .travis.yml file to your repository to tell Travis CI what to do (as described in the Travis documentation), commit and push this to the github repo.
 7. Go to travis-ci.com again to check the build status and see if your code passed or failed. 
 8. Additionally, when you look at commits in github, there will be a green checkmark next to those that passed the unittest and a red x next to those that failed.
+
+## Documentation via Doxygen
+To install Doxygen, do the following, which is explained in the documentation here (git clone https://github.com/doxygen/doxygen.git).
+
+1. Clone the repository using the following steps:
+```
+git clone https://github.com/doxygen/doxygen.git
+cd doxygen
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make
+make install
+```
+2. Create a configuration file (each project should get its own configuration file)
+```
+doxygen -g
+```
+   This will create a file called "Doxyfile" that, when opened, describes and contains all of the settings that will be used to create the documentation.
+  
+   It appears that most of the entries can be left alone and this will produce a generically formatted documentation.
+   Alternatively, one could read through the configurations documentation (http://www.stack.nl/~dimitri/doxygen/manual/config.html)
+   or use the doxywizard, which is a GUI that creates configuration files. 
+   I simply chose to change only the project name and description, while leaving all other entries as the default. 
+3. To generate the documentation, you can now run:
+```
+doxygen Doxyfile
+```
+   After doing this, with the default values I had, two new directories were created `./html` and `./latex`, containing the documentation in HTML and LaTeX formats.
+4. View your documentation by pointing your browser to `./html/index.html`

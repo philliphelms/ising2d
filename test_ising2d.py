@@ -64,9 +64,36 @@ class ising_2d_test(unittest.TestCase):
         self.assertTrue(ix<ising.lattice_size[1])
         self.assertTrue(ix>=0)
         self.assertTrue(iy>=0)
+
+    def test_energy_difference(self):
+        ising = ising2d()
+        ising.energy_prev = 1.
+        ising.energy_curr = 1.
+        result = ising.keep_change()
+        self.assertFalse(result)
         
+    def test_single_metropolis_step(self):
+        # Run a single full flip with accept/reject, check that only one or zero spins has changed
+        ising = ising2d()
+        ising.find_pairs()
+        ising.initialize_guess()
+        initial_lattice = ising.lattice.copy()
+        initial_itercnt = ising.itercnt
+        ising.single_mc_step()
+        final_lattice = ising.lattice.copy()
+        final_itercnt = ising.itercnt
+        # Check that only one spin at most has been changed
+        diff = np.sum(np.sum(np.abs(initial_lattice-final_lattice)))
+        self.assertTrue((diff == 0) or (diff == 1))
+        # Check that iter increased by 1
+        self.assertTrue(final_itercnt-initial_itercnt is 1)
+
+    def test_niter(self):
+        ising = ising2d()
+        ising.find_pairs()
+        ising.initialize_guess()
+        E = ising.run_mc(niter=1000)
+        self.assertEqual(1000,ising.itercnt)
                 
 if __name__ == "__main__":
     unittest.main()
-
-
