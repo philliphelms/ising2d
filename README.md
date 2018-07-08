@@ -64,9 +64,50 @@ doxygen -g
    Alternatively, one could read through the configurations documentation (http://www.stack.nl/~dimitri/doxygen/manual/config.html)
    or use the doxywizard, which is a GUI that creates configuration files. 
    I simply chose to change only the project name and description, while leaving all other entries as the default. 
+     *`PROJECT_NAME`
+     *`PROJECT_BRIEF`
+     *`OPTIMIZE_OUTPUT_JAVA`, which helps optimize the output for python scripts (because python looks more like java than c/c++
+
 3. To generate the documentation, you can now run:
 ```
 doxygen Doxyfile
 ```
    After doing this, with the default values I had, two new directories were created `./html` and `./latex`, containing the documentation in HTML and LaTeX formats.
 4. View your documentation by pointing your browser to `./html/index.html`
+   To get the pdf of the documentation, navigate to the `./latex` directory and type `make pdf`. 
+Now that the documnetation has been generated, it is mostly useless if your code was poorly commented as mine was,
+so the next step will be to properly comment your code so that the doxygen documentation provides meaningful information.
+Since I am working primarily in Python, I will provide the details on doing this in that language, though all the information is provided in the doxygen documentation (http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html)
+
+To start, a documentation block starts with a `##` 
+For example, the doxygen documentation provides this generic python file:
+```
+## @package pyexample
+#  Documentation for this module.
+#
+#  More details.
+## Documentation for a function.
+#
+#  More details.
+def func():
+    pass
+## Documentation for a class.
+#
+#  More details.
+class PyClass:
+   
+    ## The constructor.
+    def __init__(self):
+        self._memVar = 0;
+   
+    ## Documentation for a method.
+    #  @param self The object pointer.
+    def PyMethod(self):
+        pass
+     
+    ## A class variable.
+    classVar = 0;
+    ## @var _memVar
+    #  a member variable
+```
+
